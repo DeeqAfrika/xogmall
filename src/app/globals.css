@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #10213f;
+  --ink: #10213f;
+  --muted: #5d6b82;
+  --blue: #1149d8;
+  --blue-dark: #0a369f;
+  --navy: #071c3e;
+  --sky: #edf5ff;
+  --line: #dfe7f2;
+  --coral: #f06f61;
+  --gold: #ffbf23;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-brand: var(--blue);
+  --color-brand-dark: var(--blue-dark);
+  --color-navy: var(--navy);
+  --color-sky-soft: var(--sky);
+  --color-line: var(--line);
+  --color-coral: var(--coral);
+  --color-gold: var(--gold);
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #cbdcff;
+  color: #071c3e;
+}
+
+.container-shell {
+  width: min(100% - 2rem, 74rem);
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.display-title {
+  color: var(--ink);
+  font-size: clamp(2.6rem, 5vw, 4.45rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.section-title {
+  color: var(--ink);
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-weight: 680;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+}
+
+.body-copy {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid #8eb1ff;
+  outline-offset: 3px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .container-shell {
+    width: min(100% - 1.25rem, 76rem);
+  }
+
+  .section-pad {
+    padding-block: 3.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
