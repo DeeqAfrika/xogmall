@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Briefcase, FirstAid, GraduationCap, UsersThree } from "@phosphor-icons/react/dist/ssr";
 import { getSiteContentValues } from "@/lib/site-content";
 
@@ -35,14 +36,25 @@ export async function AboutSection() {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
-          {moments.map(({ icon: Icon, label, text }) => (
-            <div key={label} className="min-h-40 rounded-2xl border border-red-100 bg-sky-soft p-5">
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-brand shadow-sm"><Icon aria-hidden="true" size={24} weight="duotone" /></span>
-              <h3 className="mt-5 text-base font-bold text-ink">{label}</h3>
-              <p className="mt-2 text-xs leading-5 text-muted">{text}</p>
-            </div>
-          ))}
+        <div className="grid gap-3">
+          <div className="relative min-h-64 overflow-hidden rounded-3xl sm:min-h-72">
+            <Image
+              src="/images/hogmall-community-connection.png"
+              alt="Family members connecting by phone across two homes"
+              fill
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="object-cover object-center"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {moments.map(({ icon: Icon, label, text }) => (
+              <div key={label} className="min-h-40 rounded-2xl border border-red-100 bg-sky-soft p-5">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-brand shadow-sm"><Icon aria-hidden="true" size={24} weight="duotone" /></span>
+                <h3 className="mt-5 text-base font-bold text-ink">{label}</h3>
+                <p className="mt-2 text-xs leading-5 text-muted">{text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

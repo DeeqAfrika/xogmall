@@ -21,12 +21,12 @@ export function AgentSection() {
           </div>
           <div className="relative min-h-64 lg:min-h-[290px]">
             <Image
-              src="/images/hogmall-agent-banner-v2.png"
-              alt="A Hogmall agent helping a customer"
+              src="/images/hogmall-agent-support.png"
+              alt="An agent helping a customer at a service counter"
               fill
               loading="eager"
               sizes="(max-width: 1024px) 100vw, 54vw"
-              className="object-cover object-center"
+              className="object-cover object-[62%_center]"
             />
           </div>
         </div>

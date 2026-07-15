@@ -32,8 +32,8 @@ export function HeroSection({ rate }: { rate: ExchangeRate | null }) {
 
         <div className="relative min-h-[360px] lg:min-h-[520px]">
           <Image
-            src="/images/hogmall-hero-couple-v2.png"
-            alt="A couple smiling as they use a mobile phone together"
+            src="/images/hogmall-transfer-family.png"
+            alt="A man and an older couple using their phones"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 57vw"
