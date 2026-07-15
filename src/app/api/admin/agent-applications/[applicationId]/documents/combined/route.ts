@@ -101,7 +101,7 @@ export async function GET(
   }
 
   const pdfBytes = await pdf.save();
-  const fileName = `xogmall-agent-application-${safeDownloadName(application.business_name || application.full_name || application.id)}.pdf`;
+  const fileName = `hogmall-agent-application-${safeDownloadName(application.business_name || application.full_name || application.id)}.pdf`;
 
   return new Response(Buffer.from(pdfBytes), {
     headers: {

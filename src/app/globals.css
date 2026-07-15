@@ -2,16 +2,16 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #10213f;
-  --ink: #10213f;
-  --muted: #5d6b82;
-  --blue: #1149d8;
-  --blue-dark: #0a369f;
-  --navy: #071c3e;
-  --sky: #edf5ff;
-  --line: #dfe7f2;
-  --coral: #f06f61;
-  --gold: #ffbf23;
+  --foreground: #241719;
+  --ink: #241719;
+  --muted: #6f5a5d;
+  --blue: #e30613;
+  --blue-dark: #b4000b;
+  --navy: #35070b;
+  --sky: #fff3f4;
+  --line: #eedbdd;
+  --coral: #ff3340;
+  --gold: #e30613;
 }
 
 @theme inline {
@@ -59,8 +59,8 @@ a {
 }
 
 ::selection {
-  background: #cbdcff;
-  color: #071c3e;
+  background: #ffd8dc;
+  color: #35070b;
 }
 
 .container-shell {
@@ -103,7 +103,7 @@ a {
 }
 
 .focus-ring:focus-visible {
-  outline: 3px solid #8eb1ff;
+  outline: 3px solid #ff7f88;
   outline-offset: 3px;
 }
 

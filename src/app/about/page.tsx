@@ -6,8 +6,8 @@ import { COMPANY_ADDRESS } from "@/lib/constants";
 import { getSiteContentValues } from "@/lib/site-content";
 
 export const metadata: Metadata = {
-  title: "About Xogmall",
-  description: "Learn about Xogmall, its UK-based transfer support, Destination information, compliance approach, and agent network.",
+  title: "About Hogmall",
+  description: "Learn about Hogmall, its UK-based transfer support, Destination information, compliance approach, and agent network.",
 };
 
 const principles = [
@@ -18,9 +18,9 @@ const principles = [
 ];
 
 const supportAreas = [
-  { icon: GlobeHemisphereEast, title: "Destination information", text: "Xogmall supports corridors and communities where customers need clear payout guidance and practical help." },
+  { icon: GlobeHemisphereEast, title: "Destination information", text: "Hogmall supports corridors and communities where customers need clear payout guidance and practical help." },
   { icon: ShieldCheck, title: "Responsible checks", text: "Verification, document requests, and review steps help protect customers and support legal obligations." },
-  { icon: UsersThree, title: "Community support", text: "Customers can use online guidance, contact support, or speak with a Xogmall agent where available." },
+  { icon: UsersThree, title: "Community support", text: "Customers can use online guidance, contact support, or speak with a Hogmall agent where available." },
   { icon: Handshake, title: "Agent partners", text: "Approved agents help customers understand requirements, prepare information, and access support." },
 ];
 
@@ -32,7 +32,7 @@ export default async function AboutPage() {
       <section className="bg-white py-12 sm:py-16">
         <div className="container-shell">
           <div className="max-w-3xl">
-            <p className="eyebrow">About Xogmall</p>
+            <p className="eyebrow">About Hogmall</p>
             <h1 className="section-title mt-4">{content["about.title"]}</h1>
             <p className="body-copy mt-6">{content["about.body"]}</p>
           </div>
@@ -48,9 +48,9 @@ export default async function AboutPage() {
             </section>
 
             <section className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-              <h2 className="text-2xl font-semibold tracking-tight text-ink">What Xogmall helps with</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-ink">What Hogmall helps with</h2>
               <p className="mt-4 text-sm leading-7 text-muted">
-                Xogmall provides transfer support, agent access, payout guidance, and customer assistance for people sending money from the UK. The website shows current rate information and connects customers to the right support route before final transfer details are confirmed.
+                Hogmall provides transfer support, agent access, payout guidance, and customer assistance for people sending money from the UK. The website shows current rate information and connects customers to the right support route before final transfer details are confirmed.
               </p>
               <ul className="mt-6 grid gap-3">
                 {principles.map((item) => (
@@ -77,10 +77,10 @@ export default async function AboutPage() {
 
           <div className="mt-10 flex flex-col gap-3 rounded-2xl bg-navy p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-white">Need help from Xogmall?</h2>
-              <p className="mt-2 text-sm leading-6 text-blue-100">Use the contact page for transfer support, payout questions, agent support, and partner enquiries.</p>
+              <h2 className="text-2xl font-semibold tracking-tight text-white">Need help from Hogmall?</h2>
+              <p className="mt-2 text-sm leading-6 text-red-100">Use the contact page for transfer support, payout questions, agent support, and partner enquiries.</p>
             </div>
-            <Link href="/contact" className="focus-ring inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-white px-5 text-sm font-semibold text-brand hover:bg-blue-50">
+            <Link href="/contact" className="focus-ring inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-white px-5 text-sm font-semibold text-brand hover:bg-red-50">
               Contact support
             </Link>
           </div>

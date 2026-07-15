@@ -11,7 +11,7 @@ import { getSiteContentValues } from "@/lib/site-content";
 export const metadata: Metadata = {
   title: "Agents",
   description:
-    "Find Xogmall agents, learn about agent support, and start the Xogmall agent onboarding process.",
+    "Find Hogmall agents, learn about agent support, and start the Hogmall agent onboarding process.",
 };
 
 export const dynamic = "force-dynamic";
@@ -30,9 +30,9 @@ export default async function AgentsPage() {
         <div className="container-shell">
           <div className="max-w-3xl">
             <p className="eyebrow">Agents</p>
-            <h1 className="section-title mt-4">Find, contact, or become a Xogmall agent.</h1>
+            <h1 className="section-title mt-4">Find, contact, or become a Hogmall agent.</h1>
             <p className="body-copy mt-6">
-              Search the public agent locator, learn what agents support, and start the onboarding process if you want to partner with Xogmall.
+              Search the public agent locator, learn what agents support, and start the onboarding process if you want to partner with Hogmall.
             </p>
           </div>
         </div>
@@ -44,9 +44,9 @@ export default async function AgentsPage() {
             <span className="flex size-11 items-center justify-center rounded-full bg-sky-soft text-brand">
               <Storefront aria-hidden="true" size={23} weight="duotone" />
             </span>
-            <h2 className="mt-5 text-xl font-semibold text-ink">Become a Xogmall agent</h2>
+            <h2 className="mt-5 text-xl font-semibold text-ink">Become a Hogmall agent</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Submit your details and required onboarding documents so Xogmall staff can review your application and prepare the agent forms for signature.
+              Submit your details and required onboarding documents so Hogmall staff can review your application and prepare the agent forms for signature.
             </p>
             <Link href="/agent-onboarding" className="focus-ring mt-5 inline-flex min-h-11 items-center rounded-xl bg-brand px-5 text-sm font-semibold text-white hover:bg-brand-dark">
               Start agent onboarding
@@ -59,7 +59,7 @@ export default async function AgentsPage() {
             </span>
             <h2 className="mt-5 text-xl font-semibold text-ink">What agents help with</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Agents support customers with transfer guidance, information checks, document readiness, payout questions, and escalation to Xogmall staff when needed.
+              Agents support customers with transfer guidance, information checks, document readiness, payout questions, and escalation to Hogmall staff when needed.
             </p>
           </article>
 
@@ -69,10 +69,10 @@ export default async function AgentsPage() {
             </span>
             <h2 className="mt-5 text-xl font-semibold text-ink">Authorised agent access</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Existing authorised agents can open the Xogmall Agent Portal in a separate tab.
+              Existing authorised agents can open the Hogmall Agent Portal in a separate tab.
             </p>
             {AGENT_PORTAL_URL ? (
-              <a href={AGENT_PORTAL_URL} target="_blank" rel="noreferrer" className="focus-ring mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl border border-brand px-5 text-sm font-semibold text-brand hover:bg-blue-50">
+              <a href={AGENT_PORTAL_URL} target="_blank" rel="noreferrer" className="focus-ring mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl border border-brand px-5 text-sm font-semibold text-brand hover:bg-red-50">
                 Open Agent Portal
                 <ArrowSquareOut aria-hidden="true" size={16} weight="bold" />
               </a>
@@ -87,9 +87,9 @@ export default async function AgentsPage() {
         <div className="container-shell">
           <div className="max-w-3xl">
             <p className="eyebrow">UK agent locator</p>
-            <h2 className="section-title mt-4">Find your nearest Xogmall agent.</h2>
+            <h2 className="section-title mt-4">Find your nearest Hogmall agent.</h2>
             <p className="body-copy mt-6">
-              Search by postcode, town, agent name, or register reference. Confirmed addresses appear on Google Maps, and the wider published agent directory helps you find other Xogmall agents while their public addresses are confirmed.
+              Search by postcode, town, agent name, or register reference. Confirmed addresses appear on Google Maps, and the wider published agent directory helps you find other Hogmall agents while their public addresses are confirmed.
             </p>
           </div>
         </div>

@@ -36,7 +36,7 @@ export async function GET(
 
   const agent = normalizeAgent(data);
   const pdfBytes = await createAgentRecordPdf(agent);
-  const fileName = `xogmall-agent-${safePdfFileName(agent.name)}.pdf`;
+  const fileName = `hogmall-agent-${safePdfFileName(agent.name)}.pdf`;
 
   return new Response(Buffer.from(pdfBytes), {
     headers: {

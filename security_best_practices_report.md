@@ -1,4 +1,4 @@
-# Xogmall security review
+# Hogmall security review
 
 ## Executive summary
 
@@ -9,7 +9,7 @@ The cloned application has been reviewed as a Next.js 16, React 19, TypeScript, 
 ### SEC-001 — applicant could change privileged review fields
 
 - Severity: High
-- Location: `supabase/migrations/20260701120000_agent_onboarding.sql` applicant update policy; fixed by `supabase/migrations/20260714124640_harden_xogmall_access_controls.sql:14`
+- Location: `supabase/migrations/20260701120000_agent_onboarding.sql` applicant update policy; fixed by `supabase/migrations/20260714124640_harden_hogmall_access_controls.sql:14`
 - Evidence: the inherited policy limited updates by `user_id` but did not limit status, reviewer, review timestamp, or admin-note changes.
 - Impact: an authenticated applicant could have attempted to self-approve or falsify review data on their own row.
 - Fix: a security-invoker trigger now blocks applicant writes to review fields and enforces allowed status transitions. Admin authorization remains based on non-user-editable `app_metadata`.
@@ -17,7 +17,7 @@ The cloned application has been reviewed as a Next.js 16, React 19, TypeScript, 
 ### SEC-002 — sensitive tables were enabled for RLS but not forced
 
 - Severity: Medium
-- Location: `supabase/migrations/20260714124640_harden_xogmall_access_controls.sql:4`
+- Location: `supabase/migrations/20260714124640_harden_hogmall_access_controls.sql:4`
 - Evidence: inherited migrations used `ENABLE ROW LEVEL SECURITY` only.
 - Impact: table-owner execution paths could bypass RLS unexpectedly.
 - Fix: RLS is now forced for rates, agents, site content, applications, and document metadata.
@@ -44,7 +44,7 @@ The cloned application has been reviewed as a Next.js 16, React 19, TypeScript, 
 
 ## Remaining verification
 
-- Apply migrations to the empty Xogmall project and run Supabase database/security advisors.
+- Apply migrations to the empty Hogmall project and run Supabase database/security advisors.
 - Exercise anon, applicant, non-admin authenticated, admin, and service-role access cases against the hosted project.
 - Verify Auth redirect allowlists, password policy, MFA expectations for admins, rate limiting, and production email configuration in the Supabase dashboard.
 - Validate production response headers and add a nonce-based Content Security Policy after final portal, analytics, and third-party integrations are known.

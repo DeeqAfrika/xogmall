@@ -105,7 +105,7 @@ async function getPendingFcaDirectoryEntries(): Promise<AgentDirectoryEntry[]> {
       postcode: agent.postcode ? String(agent.postcode) : null,
       status: "address_pending",
       display_order: Number(agent.display_order || 0),
-      source_note: "directory Xogmall agent. Public address is being confirmed before map directions are shown.",
+      source_note: "directory Hogmall agent. Public address is being confirmed before map directions are shown.",
     }));
   } catch {
     return [];
@@ -124,7 +124,7 @@ function agentToDirectoryEntry(agent: AgentLocation): AgentDirectoryEntry {
     status: hasPendingAddress ? "address_pending" : "mapped",
     display_order: agent.display_order,
     source_note: hasPendingAddress
-      ? "directory Xogmall agent. Public address is being confirmed before map directions are shown."
+      ? "directory Hogmall agent. Public address is being confirmed before map directions are shown."
       : null,
   };
 }

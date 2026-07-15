@@ -22,8 +22,8 @@ export function AdminShell({
     <div className="min-h-screen bg-[#f5f8fc]">
       <header className="border-b border-line bg-white">
         <div className="container-shell flex min-h-20 flex-wrap items-center justify-between gap-4">
-          <Link href="/" aria-label="Xogmall homepage" className="focus-ring rounded-lg">
-            <Image src="/brand/xogmall-logo.png" alt="Xogmall" width={4000} height={1928} className="h-auto w-[112px]" priority />
+          <Link href="/" aria-label="Hogmall homepage" className="focus-ring rounded-lg">
+            <Image src="/brand/hogmall-icon.png" alt="Hogmall" width={267} height={255} className="h-11 w-auto object-contain" priority />
           </Link>
           {active && (
             <nav aria-label="Admin navigation" className="order-3 flex w-full gap-2 overflow-x-auto pb-4 text-sm sm:order-none sm:w-auto sm:pb-0">

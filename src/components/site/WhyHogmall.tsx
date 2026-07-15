@@ -17,7 +17,7 @@ const reasons = [
   {
     icon: MapPin,
     title: "Destination information",
-    text: "Supported countries will be shown only after Xogmall approval.",
+    text: "Supported countries will be shown only after Hogmall approval.",
   },
   {
     icon: UserCircleGear,
@@ -41,12 +41,12 @@ const reasons = [
   },
 ];
 
-export function WhyXogmall() {
+export function WhyHogmall() {
   return (
-    <section id="why-xogmall" className="section-pad bg-white">
+    <section id="why-hogmall" className="section-pad bg-white">
       <div className="container-shell">
         <SectionIntro
-          eyebrow="Why Xogmall"
+          eyebrow="Why Hogmall"
           title="A clear foundation for customers and agents."
           description="The platform keeps rate information, agent discovery, and onboarding easy to find while launch wording is reviewed."
         />

@@ -37,17 +37,17 @@ export function AdminUsersManager({ users }: { users: AdminUserSummary[] }) {
 
         <label className="mt-7 block">
           <span className="text-sm font-semibold text-ink">Email address</span>
-          <input name="email" type="email" required autoComplete="email" className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+          <input name="email" type="email" required autoComplete="email" className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
         </label>
 
         <label className="mt-5 block">
           <span className="text-sm font-semibold text-ink">Temporary password</span>
-          <input name="password" type="password" required minLength={8} autoComplete="new-password" className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+          <input name="password" type="password" required minLength={8} autoComplete="new-password" className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
         </label>
 
         <label className="mt-5 block">
           <span className="text-sm font-semibold text-ink">Name <span className="font-normal text-muted">(optional)</span></span>
-          <input name="full_name" type="text" autoComplete="name" className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+          <input name="full_name" type="text" autoComplete="name" className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
         </label>
 
         {state.status === "error" && <p role="alert" className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{state.message}</p>}

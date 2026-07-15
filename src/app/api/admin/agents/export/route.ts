@@ -36,7 +36,7 @@ export async function GET() {
   return new Response(Buffer.from(pdfBytes), {
     headers: {
       "content-type": "application/pdf",
-      "content-disposition": 'attachment; filename="xogmall-agent-locator-register.pdf"',
+      "content-disposition": 'attachment; filename="hogmall-agent-locator-register.pdf"',
       "cache-control": "private, no-store",
     },
   });

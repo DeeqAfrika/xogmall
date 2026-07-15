@@ -10,7 +10,7 @@ export default function TermsPage() {
     <PublicPageShell>
       <ContentPage eyebrow="Legal placeholder" title="Terms and Conditions" intro={launchPlaceholder}>
         <p>This page is a non-operative placeholder and does not describe or promise a live service.</p>
-        <p>Approved terms must be supplied by Xogmall and reviewed for the actual legal entity, services, eligibility, rates, verification, cancellation, complaints, liability, partner arrangements, and governing law before launch.</p>
+        <p>Approved terms must be supplied by Hogmall and reviewed for the actual legal entity, services, eligibility, rates, verification, cancellation, complaints, liability, partner arrangements, and governing law before launch.</p>
       </ContentPage>
     </PublicPageShell>
   );

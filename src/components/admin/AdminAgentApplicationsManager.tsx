@@ -114,7 +114,7 @@ export function AdminAgentApplicationsManager({
                 </a>
                 <a
                   href={`/api/admin/agent-applications/${application.id}/forms`}
-                  className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-blue-50"
+                  className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-red-50"
                 >
                   <DownloadSimple size={18} weight="bold" />
                   Forms ZIP
@@ -145,7 +145,7 @@ export function AdminAgentApplicationsManager({
               <div className="mt-6 rounded-2xl border border-line bg-sky-soft p-4">
                 <div className="flex flex-wrap gap-2">
                   {preparedAgentForms.map((form) => (
-                    <a key={form.id} href={`/api/admin/agent-applications/${application.id}/forms/${form.id}`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-blue-50">
+                    <a key={form.id} href={`/api/admin/agent-applications/${application.id}/forms/${form.id}`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-red-50">
                       <DownloadSimple size={16} weight="bold" />
                       {form.label}
                     </a>
@@ -160,7 +160,7 @@ export function AdminAgentApplicationsManager({
                     <select
                       value={statusById[application.id]}
                       onChange={(event) => setStatusById((current) => ({ ...current, [application.id]: event.target.value as AgentApplicationStatus }))}
-                      className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+                      className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
                     >
                       {Object.entries(applicationStatusLabels).map(([status, label]) => (
                         <option key={status} value={status}>{label}</option>
@@ -172,7 +172,7 @@ export function AdminAgentApplicationsManager({
                     <input
                       value={notesById[application.id] ?? ""}
                       onChange={(event) => setNotesById((current) => ({ ...current, [application.id]: event.target.value }))}
-                      className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+                      className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
                       placeholder="Internal review note"
                     />
                   </label>
@@ -259,7 +259,7 @@ function statusClass(status: AgentApplicationStatus) {
       return "bg-red-100 text-red-800";
     case "submitted":
     case "under_review":
-      return "bg-blue-100 text-blue-800";
+      return "bg-red-100 text-red-800";
     case "more_info_required":
       return "bg-amber-100 text-amber-800";
     default:

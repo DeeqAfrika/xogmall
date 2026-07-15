@@ -72,10 +72,10 @@ export default async function AdminDashboardPage() {
     <AdminShell active="dashboard" actions={<LogoutButton />}>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="eyebrow">Xogmall admin</p>
+          <p className="eyebrow">Hogmall admin</p>
           <h1 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-ink sm:text-5xl">Website control panel</h1>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-muted">
-            Manage the daily rate, public agent locator, and approved text blocks used across the Xogmall website.
+            Manage the daily rate, public agent locator, and approved text blocks used across the Hogmall website.
           </p>
         </div>
       </div>
@@ -94,9 +94,9 @@ export default async function AdminDashboardPage() {
       </div>
 
       <div className="mt-10 rounded-2xl bg-navy p-7 text-white sm:p-8">
-        <p className="eyebrow !text-blue-300">Operational note</p>
+        <p className="eyebrow !text-red-300">Operational note</p>
         <h2 className="mt-3 text-2xl font-semibold tracking-tight">Use draft mode for anything that is not ready for the public site.</h2>
-        <p className="mt-4 max-w-3xl text-sm leading-6 text-blue-100">
+        <p className="mt-4 max-w-3xl text-sm leading-6 text-red-100">
           Agent addresses and content snippets are protected by admin-only update rules. Published agent locations and published content can be read by the public website.
         </p>
       </div>

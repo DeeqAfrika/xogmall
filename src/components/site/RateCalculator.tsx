@@ -40,12 +40,12 @@ export function RateCalculator({ rate }: { rate: number | null }) {
         : "";
 
   return (
-    <div id="rate-calculator" className="rounded-xl border border-line bg-white p-5 shadow-[0_18px_55px_rgba(7,28,62,0.2)] sm:p-6">
+    <div id="rate-calculator" className="rounded-xl border border-line bg-white p-5 shadow-[0_18px_55px_rgba(76,5,8,0.2)] sm:p-6">
       <h2 className="text-lg font-bold tracking-tight text-ink">Check your transfer</h2>
       <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_auto_1fr_0.95fr] lg:items-end">
         <label className="block">
           <span className="text-[11px] font-semibold text-muted">You send</span>
-          <span className="mt-1.5 flex h-14 items-center rounded-lg border border-line bg-white px-4 focus-within:border-brand focus-within:ring-3 focus-within:ring-blue-100">
+          <span className="mt-1.5 flex h-14 items-center rounded-lg border border-line bg-white px-4 focus-within:border-brand focus-within:ring-3 focus-within:ring-red-100">
             <span className="font-mono font-semibold text-ink">£</span>
             <input
               type="number"
@@ -72,7 +72,7 @@ export function RateCalculator({ rate }: { rate: number | null }) {
             They receive (estimated)
             <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-amber-800">Commission Not Included</span>
           </span>
-          <span className="mt-1.5 flex h-14 items-center rounded-lg border border-line bg-[#f8fbff] px-4 focus-within:border-brand focus-within:ring-3 focus-within:ring-blue-100">
+          <span className="mt-1.5 flex h-14 items-center rounded-lg border border-line bg-[#f8fbff] px-4 focus-within:border-brand focus-within:ring-3 focus-within:ring-red-100">
             <span className="font-mono font-semibold text-ink">$</span>
             <input
               type="number"

@@ -12,7 +12,7 @@ export function RateBanner({ rate }: { rate: ExchangeRate | null }) {
     >
       <div className="container-shell py-1.5">
         <div className="flex min-h-8 flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
-          <span className="text-xs font-semibold text-blue-100 sm:text-sm">
+          <span className="text-xs font-semibold text-red-100 sm:text-sm">
             Today&apos;s rate
           </span>
           {rate ? (
@@ -23,14 +23,14 @@ export function RateBanner({ rate }: { rate: ExchangeRate | null }) {
             <strong className="text-base">Rate temporarily unavailable</strong>
           )}
           {updated && (
-            <span className="hidden items-center gap-1.5 text-[10px] text-blue-100 md:ml-auto md:flex">
+            <span className="hidden items-center gap-1.5 text-[10px] text-red-100 md:ml-auto md:flex">
               <Clock aria-hidden="true" size={15} weight="bold" />
               Updated {updated.date} at {updated.time} UK time
             </span>
           )}
         </div>
         <p className="sr-only">
-          The active rate is published manually by an authorised Xogmall admin. The calculator is informational only.
+          The active rate is published manually by an authorised Hogmall admin. The calculator is informational only.
         </p>
       </div>
     </aside>

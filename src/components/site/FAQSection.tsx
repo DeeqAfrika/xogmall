@@ -2,9 +2,9 @@ import { Plus } from "@phosphor-icons/react/dist/ssr";
 import { getSiteContentValues } from "@/lib/site-content";
 
 const customerQuestions = [
-  { question: "What is today's Xogmall rate?", answer: "The currently active GBP to USD rate is displayed at the top of this page and is published by an authorised admin." },
+  { question: "What is today's Hogmall rate?", answer: "The currently active GBP to USD rate is displayed at the top of this page and is published by an authorised admin." },
   { question: "Is the calculator amount final?", answer: "No. It is a mathematical estimate using the displayed rate and does not represent an offer, fee, payout, or guaranteed amount." },
-  { question: "Which countries does Xogmall focus on?", answer: "Supported countries and service availability will be published after approval." },
+  { question: "Which countries does Hogmall focus on?", answer: "Supported countries and service availability will be published after approval." },
   { question: "Where are the service terms?", answer: "Approved service and legal terms have not yet been supplied. The placeholder legal pages are not operative and must be replaced before launch." },
   { question: "How do I contact support?", answer: "The approved support email and telephone number are awaiting configuration. The contact form remains disabled until an address is supplied." },
 ];
@@ -12,10 +12,10 @@ const customerQuestions = [
 const businessQuestions = [
   { question: "How can my business apply to become an agent?", answer: "Use the agent onboarding page to create a private account and submit an individual or limited-company application for admin review." },
   { question: "Where is the agent portal?", answer: "The approved agent portal link is not shown until NEXT_PUBLIC_AGENT_PORTAL_URL is configured." },
-  { question: "Can Xogmall add multiple branches to the locator?", answer: "Yes. Admin users can add, edit, draft, and publish multiple agent addresses for the public agent locator, including contact details, opening hours, and map coordinates." },
-  { question: "What responsibilities do agents have?", answer: "Approved agent terms and responsibilities must be supplied by Xogmall before an appointment or signature is requested." },
-  { question: "Can B2B partners request content or rate updates?", answer: "Approved Xogmall admins can update daily rates and selected public content in the admin area. Compliance-sensitive legal policy text should be reviewed before publication." },
-  { question: "Are the downloadable agent forms final?", answer: "No. They are clearly marked workflow placeholders and must be replaced with approved Xogmall documents before launch." },
+  { question: "Can Hogmall add multiple branches to the locator?", answer: "Yes. Admin users can add, edit, draft, and publish multiple agent addresses for the public agent locator, including contact details, opening hours, and map coordinates." },
+  { question: "What responsibilities do agents have?", answer: "Approved agent terms and responsibilities must be supplied by Hogmall before an appointment or signature is requested." },
+  { question: "Can B2B partners request content or rate updates?", answer: "Approved Hogmall admins can update daily rates and selected public content in the admin area. Compliance-sensitive legal policy text should be reviewed before publication." },
+  { question: "Are the downloadable agent forms final?", answer: "No. They are clearly marked workflow placeholders and must be replaced with approved Hogmall documents before launch." },
 ];
 
 export async function FAQSection() {
@@ -44,7 +44,7 @@ function FAQGroup({
   questions: { question: string; answer: string }[];
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-blue-100 bg-white">
+    <div className="overflow-hidden rounded-xl border border-red-100 bg-white">
       <div className="border-b border-line p-5 sm:p-6">
         <h3 className="text-lg font-bold text-ink">{title}</h3>
         <p className="mt-2 text-sm leading-6 text-muted">{intro}</p>

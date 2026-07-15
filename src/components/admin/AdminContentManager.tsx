@@ -84,7 +84,7 @@ export function AdminContentManager({ blocks }: { blocks: EditableBlock[] }) {
             value={block.body}
             onChange={(event) => updateBlock(block.key, { body: event.target.value })}
             rows={5}
-            className="mt-6 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+            className="mt-6 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
           />
 
           <button

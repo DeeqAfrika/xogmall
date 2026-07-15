@@ -30,7 +30,7 @@ export function HowItWorks() {
                 <span className="flex size-10 items-center justify-center rounded-full bg-sky-soft text-brand">
                   <Icon aria-hidden="true" size={21} weight="duotone" />
                 </span>
-                <span className="font-mono text-xs font-bold text-blue-300">0{index + 1}</span>
+                <span className="font-mono text-xs font-bold text-red-300">0{index + 1}</span>
               </div>
               <h3 className="mt-5 text-base font-bold text-ink">{title}</h3>
               <p className="mt-2 text-xs leading-5 text-muted">{text}</p>

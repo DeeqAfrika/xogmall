@@ -26,7 +26,7 @@ export function ReceiveMethods() {
         </p>
         <div className="mt-10 grid gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
           {methods.map(({ icon: Icon, title, text }) => (
-            <article key={title} className="px-4 text-center lg:border-r lg:border-blue-200 lg:last:border-r-0">
+            <article key={title} className="px-4 text-center lg:border-r lg:border-red-200 lg:last:border-r-0">
               <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-white text-brand shadow-sm">
                 <Icon aria-hidden="true" size={28} weight="duotone" />
               </span>

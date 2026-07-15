@@ -67,16 +67,16 @@ export function AdminRateForm({ defaultDate }: { defaultDate: string }) {
         </label>
         <label>
           <span className="text-sm font-semibold text-ink">Rate</span>
-          <input type="number" required min="0.000001" step="0.000001" inputMode="decimal" placeholder="1.270000" value={rate} onChange={(event) => setRate(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 font-mono text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+          <input type="number" required min="0.000001" step="0.000001" inputMode="decimal" placeholder="1.270000" value={rate} onChange={(event) => setRate(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 font-mono text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
         </label>
         <label>
           <span className="text-sm font-semibold text-ink">Effective date</span>
-          <input type="date" required value={effectiveDate} onChange={(event) => setEffectiveDate(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+          <input type="date" required value={effectiveDate} onChange={(event) => setEffectiveDate(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
         </label>
       </div>
       <label className="mt-5 block">
         <span className="text-sm font-semibold text-ink">Note <span className="font-normal text-muted">(optional)</span></span>
-        <textarea rows={3} maxLength={500} value={note} onChange={(event) => setNote(event.target.value)} placeholder="Internal context for this rate" className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+        <textarea rows={3} maxLength={500} value={note} onChange={(event) => setNote(event.target.value)} placeholder="Internal context for this rate" className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
       </label>
 
       {error && <p role="alert" className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}

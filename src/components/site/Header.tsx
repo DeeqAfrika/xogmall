@@ -25,12 +25,12 @@ export function Header() {
           className="focus-ring shrink-0 rounded-lg"
         >
           <Image
-            src={brand.logo.full}
+            src={brand.logo.icon}
             alt={brand.name}
-            width={4000}
-            height={1928}
+            width={267}
+            height={255}
             priority
-            className="h-auto w-[105px] sm:w-[116px]"
+            className="h-11 w-auto object-contain sm:h-12"
           />
         </Link>
 
@@ -51,7 +51,7 @@ export function Header() {
             href={brand.agentPortalUrl}
             target="_blank"
             rel="noreferrer"
-            className="focus-ring inline-flex h-10 items-center justify-center gap-2 rounded-md border border-brand px-3 text-xs font-semibold text-brand transition-colors hover:bg-blue-50"
+            className="focus-ring inline-flex h-10 items-center justify-center gap-2 rounded-md border border-brand px-3 text-xs font-semibold text-brand transition-colors hover:bg-red-50"
           >
             <Storefront aria-hidden="true" size={15} weight="bold" /> Open Agent Portal
           </a>

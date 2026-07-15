@@ -46,15 +46,15 @@ export function AdminLoginForm() {
         <LockKey size={24} weight="duotone" />
       </span>
       <h1 className="mt-6 text-3xl font-semibold tracking-[-0.04em] text-ink">Admin sign in</h1>
-      <p className="mt-3 text-sm leading-6 text-muted">Use your Xogmall staff email and password to manage rates, agent locations, and editable website content.</p>
+      <p className="mt-3 text-sm leading-6 text-muted">Use your Hogmall staff email and password to manage rates, agent locations, and editable website content.</p>
 
       <label className="mt-7 block">
         <span className="text-sm font-semibold text-ink">Email address</span>
-        <input type="email" required autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+        <input type="email" required autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
       </label>
       <label className="mt-5 block">
         <span className="text-sm font-semibold text-ink">Password</span>
-        <input type="password" required autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" />
+        <input type="password" required autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" />
       </label>
 
       {error && <p role="alert" className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}

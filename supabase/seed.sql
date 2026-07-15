@@ -1,2 +1,2 @@
--- Intentionally empty. Xogmall starts with no users, rates, agents,
+-- Intentionally empty. Hogmall starts with no users, rates, agents,
 -- applications, content records, document metadata, or storage objects.

@@ -174,7 +174,7 @@ export function AgentOnboardingForm({
 
     if (!options?.silent) {
       setMessage(nextStatus === "submitted"
-        ? "Application submitted. Xogmall will review the details and may email the prepared forms for signature."
+        ? "Application submitted. Hogmall will review the details and may email the prepared forms for signature."
         : "Application saved.");
     }
 
@@ -344,7 +344,7 @@ export function AgentOnboardingForm({
             Complete your agent registration.
           </h1>
           <p className="mt-4 max-w-3xl text-sm leading-6 text-muted">
-            Save your details, upload the required verification documents, then submit your application for Xogmall review.
+            Save your details, upload the required verification documents, then submit your application for Hogmall review.
           </p>
         </div>
         <button
@@ -388,7 +388,7 @@ export function AgentOnboardingForm({
             <TextField label="Email address" value={form.email} onChange={(value) => updateField("email", value)} required type="email" />
             <label>
               <span className="text-sm font-semibold text-ink">Proof of identity type</span>
-              <select value={form.proof_of_identity_type} onChange={(event) => updateField("proof_of_identity_type", event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+              <select value={form.proof_of_identity_type} onChange={(event) => updateField("proof_of_identity_type", event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
                 <option value="">Select ID type</option>
                 <option value="Passport">Passport</option>
                 <option value="EU/EEA national identity card">EU/EEA national identity card</option>
@@ -407,7 +407,7 @@ export function AgentOnboardingForm({
               value={form.residential_address}
               onChange={(event) => updateField("residential_address", event.target.value)}
               rows={3}
-              className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+              className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
             />
           </label>
 
@@ -425,7 +425,7 @@ export function AgentOnboardingForm({
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <label>
               <span className="text-sm font-semibold text-ink">Business type</span>
-              <select value={form.business_type} onChange={(event) => updateField("business_type", event.target.value as AgentBusinessType)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+              <select value={form.business_type} onChange={(event) => updateField("business_type", event.target.value as AgentBusinessType)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
                 <option value="limited_company">{businessTypeLabels.limited_company}</option>
                 <option value="sole_trader">{businessTypeLabels.sole_trader}</option>
               </select>
@@ -436,7 +436,7 @@ export function AgentOnboardingForm({
             )}
             <label>
               <span className="text-sm font-semibold text-ink">Business premises</span>
-              <select value={form.business_premises_status} onChange={(event) => updateField("business_premises_status", event.target.value as AgentBusinessPremisesStatus)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+              <select value={form.business_premises_status} onChange={(event) => updateField("business_premises_status", event.target.value as AgentBusinessPremisesStatus)} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
                 {Object.entries(businessPremisesStatusLabels).map(([value, label]) => (
                   <option key={value} value={value}>{label}</option>
                 ))}
@@ -460,7 +460,7 @@ export function AgentOnboardingForm({
                 value={form.director_shareholder_details}
                 onChange={(event) => updateField("director_shareholder_details", event.target.value)}
                 rows={4}
-                className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+                className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
                 placeholder="List directors/shareholders and their roles."
               />
             </label>
@@ -472,8 +472,8 @@ export function AgentOnboardingForm({
               value={form.notes}
               onChange={(event) => updateField("notes", event.target.value)}
               rows={4}
-              className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
-              placeholder="Anything Xogmall should know about your application."
+              className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
+              placeholder="Anything Hogmall should know about your application."
             />
           </label>
 
@@ -484,11 +484,11 @@ export function AgentOnboardingForm({
             </label>
             <label className="flex gap-3 text-sm leading-6 text-muted">
               <input type="checkbox" checked={form.consent_document_verification} onChange={(event) => updateField("consent_document_verification", event.target.checked)} className="mt-1 size-4 accent-brand" />
-              I consent to Xogmall reviewing these documents for agent onboarding and verification.
+              I consent to Hogmall reviewing these documents for agent onboarding and verification.
             </label>
             <label className="flex gap-3 text-sm leading-6 text-muted">
               <input type="checkbox" checked={form.consent_terms_conditions} onChange={(event) => updateField("consent_terms_conditions", event.target.checked)} className="mt-1 size-4 accent-brand" />
-              I agree to the Xogmall agent terms and conditions.
+              I agree to the Hogmall agent terms and conditions.
             </label>
           </div>
 
@@ -508,7 +508,7 @@ export function AgentOnboardingForm({
         <div className="rounded-3xl border border-line bg-white p-6 shadow-sm sm:p-8">
           <SectionTitle title="Document uploads" />
           <p className="mt-3 text-sm leading-6 text-muted">
-            Upload the required documents as PDF, JPG, or PNG. Optional documents can be added now or requested by Xogmall later.
+            Upload the required documents as PDF, JPG, or PNG. Optional documents can be added now or requested by Hogmall later.
           </p>
 
           <div className="mt-6 grid gap-4">
@@ -551,7 +551,7 @@ export function AgentOnboardingForm({
                     </div>
                   </div>
 
-                  <label className="focus-within:ring-3 mt-4 flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-blue-200 bg-blue-50 px-4 py-3 text-sm font-semibold text-brand focus-within:ring-blue-100 hover:bg-blue-100">
+                  <label className="focus-within:ring-3 mt-4 flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-brand focus-within:ring-red-100 hover:bg-red-100">
                     <FileArrowUp size={18} weight="bold" />
                     {uploadingType === requirement.type ? "Uploading..." : "Upload document"}
                     <input
@@ -619,7 +619,7 @@ function ApplicantProgressPanel({
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <ApplicantStep done title="Account created" body="You are signed in with the private Xogmall onboarding link." />
+        <ApplicantStep done title="Account created" body="You are signed in with the private Hogmall onboarding link." />
         <ApplicantStep
           done={completeUploads && Boolean(submittedAt)}
           active={status === "draft" || !completeUploads || status === "more_info_required"}
@@ -630,13 +630,13 @@ function ApplicantProgressPanel({
           done={submitted && status !== "more_info_required"}
           active={status === "draft" || status === "more_info_required"}
           title="Submit for review"
-          body={submitted ? "Xogmall has received your application." : "Submit when all required fields and documents are ready."}
+          body={submitted ? "Hogmall has received your application." : "Submit when all required fields and documents are ready."}
         />
         <ApplicantStep
           done={status === "approved"}
           active={formsReady}
           title="Prepared forms"
-          body="Xogmall staff will email the consent form, agency agreement, and application form for signature."
+          body="Hogmall staff will email the consent form, agency agreement, and application form for signature."
         />
       </div>
     </section>
@@ -655,7 +655,7 @@ function ApplicantStep({
   active?: boolean;
 }) {
   return (
-    <div className={`rounded-2xl border p-4 ${done ? "border-emerald-200 bg-emerald-50" : active ? "border-blue-200 bg-blue-50" : "border-line bg-sky-soft"}`}>
+    <div className={`rounded-2xl border p-4 ${done ? "border-emerald-200 bg-emerald-50" : active ? "border-red-200 bg-red-50" : "border-line bg-sky-soft"}`}>
       <div className="flex items-center gap-2">
         <span className={`inline-flex size-7 items-center justify-center rounded-full ${done ? "bg-emerald-600 text-white" : active ? "bg-brand text-white" : "bg-white text-muted"}`}>
           {done ? <CheckCircle size={17} weight="fill" /> : active ? <WarningCircle size={17} weight="fill" /> : <span className="size-2 rounded-full bg-current" />}
@@ -670,14 +670,14 @@ function ApplicantStep({
 function getApplicantStatusCopy(status: AgentApplicationStatus, missingDocumentCount: number, submittedAt: string | null) {
   if (status === "more_info_required") {
     return {
-      title: "Xogmall needs more information.",
+      title: "Hogmall needs more information.",
       body: "Update the missing details or uploads, then resubmit the application for review.",
     };
   }
 
   if (status === "submitted" || status === "under_review") {
     return {
-      title: "Your application is with Xogmall.",
+      title: "Your application is with Hogmall.",
       body: missingDocumentCount > 0
         ? "Staff can see the application, but some required uploads are still missing. Add them here so the prepared forms can be completed properly."
         : "Staff can review the details and prepare the Agent Consent Form, Agency Agreement, and Agent Application Form for signature.",
@@ -687,14 +687,14 @@ function getApplicantStatusCopy(status: AgentApplicationStatus, missingDocumentC
   if (status === "approved") {
     return {
       title: "Your agent application has been approved.",
-      body: "Xogmall will confirm the next operating steps directly with you.",
+      body: "Hogmall will confirm the next operating steps directly with you.",
     };
   }
 
   if (status === "rejected") {
     return {
       title: "This application could not be approved.",
-      body: "Contact Xogmall if you need clarification about the decision.",
+      body: "Contact Hogmall if you need clarification about the decision.",
     };
   }
 
@@ -702,7 +702,7 @@ function getApplicantStatusCopy(status: AgentApplicationStatus, missingDocumentC
     title: "Complete your details and required uploads.",
     body: submittedAt
       ? "Your previous submission is saved. Update any requested details and submit again when everything is ready."
-      : "You can save progress and return to this private link before submitting the application to Xogmall.",
+      : "You can save progress and return to this private link before submitting the application to Hogmall.",
   };
 }
 
@@ -739,7 +739,7 @@ function TextField({
         required={required}
         placeholder={placeholder}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+        className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
       />
     </label>
   );
@@ -816,7 +816,7 @@ function statusClass(status: AgentApplicationStatus) {
       return "bg-red-100 text-red-800";
     case "submitted":
     case "under_review":
-      return "bg-blue-100 text-blue-800";
+      return "bg-red-100 text-red-800";
     case "more_info_required":
       return "bg-amber-100 text-amber-800";
     default:

@@ -15,7 +15,7 @@ export function TrustSafetySection() {
         <div className="mt-9 grid gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {points.map(({ icon: Icon, title, text }) => (
             <article key={title} className="flex gap-4 px-4 lg:border-r lg:border-line lg:last:border-r-0">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-blue-200 text-brand"><Icon aria-hidden="true" size={23} weight="duotone" /></span>
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-red-200 text-brand"><Icon aria-hidden="true" size={23} weight="duotone" /></span>
               <div>
                 <h3 className="text-sm font-bold text-ink">{title}</h3>
                 <p className="mt-1.5 text-xs leading-5 text-muted">{text}</p>

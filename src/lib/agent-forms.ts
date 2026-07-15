@@ -65,11 +65,11 @@ export async function createPreparedAgentFormsZip(
 }
 
 export function preparedFormsDownloadName(application: Pick<AgentApplication, "business_name" | "full_name" | "id">) {
-  return `xogmall-prepared-agent-forms-${safePreparedFormFilePart(application.business_name || application.full_name || application.id)}.zip`;
+  return `hogmall-prepared-agent-forms-${safePreparedFormFilePart(application.business_name || application.full_name || application.id)}.zip`;
 }
 
 export function preparedFormDownloadName(form: PreparedAgentForm, application: Pick<AgentApplication, "business_name" | "full_name" | "id">) {
-  return `xogmall-${safePreparedFormFilePart(application.business_name || application.full_name || application.id)}-${form.fileName}`;
+  return `hogmall-${safePreparedFormFilePart(application.business_name || application.full_name || application.id)}-${form.fileName}`;
 }
 
 export function applicationDocuments(application: ApplicationWithDocuments) {

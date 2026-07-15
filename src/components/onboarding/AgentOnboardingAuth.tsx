@@ -76,15 +76,15 @@ export function AgentOnboardingAuth() {
 
   return (
     <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-      <div className="rounded-3xl bg-navy p-8 text-white shadow-[0_24px_70px_rgba(7,28,62,0.22)]">
-        <p className="eyebrow !text-blue-300">Private onboarding</p>
+      <div className="rounded-3xl bg-navy p-8 text-white shadow-[0_24px_70px_rgba(76,5,8,0.22)]">
+        <p className="eyebrow !text-red-300">Private onboarding</p>
         <h1 className="mt-4 text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">
-          Become a Xogmall agent.
+          Become a Hogmall agent.
         </h1>
-        <p className="mt-5 text-sm leading-7 text-blue-100">
+        <p className="mt-5 text-sm leading-7 text-red-100">
           Create an account first, then you will be logged in and taken straight to the agent form. You can return to this same private link later to sign in and update your details.
         </p>
-        <ul className="mt-8 grid gap-3 text-sm leading-6 text-blue-100">
+        <ul className="mt-8 grid gap-3 text-sm leading-6 text-red-100">
           <li><strong className="text-white">1.</strong> Register with email and password</li>
           <li><strong className="text-white">2.</strong> Complete the agent registration form</li>
           <li><strong className="text-white">3.</strong> Upload verification documents</li>
@@ -112,7 +112,7 @@ export function AgentOnboardingAuth() {
               autoComplete="name"
               value={fullName}
               onChange={(event) => setFullName(event.target.value)}
-              className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+              className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
             />
           </label>
         )}
@@ -125,7 +125,7 @@ export function AgentOnboardingAuth() {
             autoComplete="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+            className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
           />
         </label>
 
@@ -138,7 +138,7 @@ export function AgentOnboardingAuth() {
             autoComplete={mode === "signup" ? "new-password" : "current-password"}
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+            className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
           />
         </label>
 
@@ -152,7 +152,7 @@ export function AgentOnboardingAuth() {
               autoComplete="new-password"
               value={confirmPassword}
               onChange={(event) => setConfirmPassword(event.target.value)}
-              className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+              className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
             />
           </label>
         )}

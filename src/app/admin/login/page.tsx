@@ -10,7 +10,7 @@ export default function AdminLoginPage() {
     <AdminShell>
       <div className="mx-auto max-w-md py-6 sm:py-14">
         <AdminLoginForm />
-        <p className="mt-5 text-center text-xs leading-5 text-muted">This area is for authorised Xogmall staff only.</p>
+        <p className="mt-5 text-center text-xs leading-5 text-muted">This area is for authorised Hogmall staff only.</p>
       </div>
     </AdminShell>
   );

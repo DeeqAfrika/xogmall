@@ -12,12 +12,12 @@ export const editableContentBlocks = [
     key: "about.body",
     label: "About section body",
     body:
-      "Xogmall brings public rate information, a calculator, and an agent directory together in one place. Supported services, destinations, and operating details must be approved before launch.",
+      "Hogmall brings public rate information, a calculator, and an agent directory together in one place. Supported services, destinations, and operating details must be approved before launch.",
   },
   {
     key: "agentLocator.title",
     label: "Agent locator headline",
-    body: "Find a Xogmall agent near you.",
+    body: "Find a Hogmall agent near you.",
   },
   {
     key: "agentLocator.body",
@@ -33,7 +33,7 @@ export const editableContentBlocks = [
   {
     key: "faq.businessIntro",
     label: "Business and agent FAQ intro",
-    body: "Answers for agents, sub-agents, and community partners who want to work with Xogmall.",
+    body: "Answers for agents, sub-agents, and community partners who want to work with Hogmall.",
   },
 ] as const;
 

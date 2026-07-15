@@ -60,13 +60,13 @@ export const onboardingDocumentRequirements: OnboardingDocumentRequirement[] = [
   {
     type: "dbs_certificate",
     label: "DBS certificate",
-    description: "Optional for now. Xogmall may request a basic or enhanced DBS certificate later.",
+    description: "Optional for now. Hogmall may request a basic or enhanced DBS certificate later.",
     requiredFor: "optional",
   },
   {
     type: "current_cv",
     label: "Current CV",
-    description: "Optional for now. Xogmall may request a current CV later.",
+    description: "Optional for now. Hogmall may request a current CV later.",
     requiredFor: "optional",
   },
   {
@@ -103,7 +103,7 @@ export const onboardingDocumentRequirements: OnboardingDocumentRequirement[] = [
   {
     type: "additional",
     label: "Additional supporting document",
-    description: "Optional supporting document requested by Xogmall.",
+    description: "Optional supporting document requested by Hogmall.",
     requiredFor: "conditional",
   },
 ];

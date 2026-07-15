@@ -104,10 +104,10 @@ function OnboardingShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-[#f5f8fc]">
       <header className="border-b border-line bg-white">
         <div className="container-shell flex min-h-20 items-center justify-between gap-4">
-          <Link href="/" aria-label="Xogmall homepage" className="focus-ring rounded-lg">
-            <Image src="/brand/xogmall-logo.png" alt="Xogmall" width={4000} height={1928} className="h-auto w-[112px]" priority />
+          <Link href="/" aria-label="Hogmall homepage" className="focus-ring rounded-lg">
+            <Image src="/brand/hogmall-logo.png" alt="Hogmall" width={4000} height={1928} className="h-auto w-[112px]" priority />
           </Link>
-          <span className="rounded-full bg-blue-50 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-brand">
+          <span className="rounded-full bg-red-50 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-brand">
             Private link
           </span>
         </div>

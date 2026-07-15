@@ -1,4 +1,4 @@
--- Final fresh-project hardening for Xogmall. This migration contains no seed
+-- Final fresh-project hardening for Hogmall. This migration contains no seed
 -- users, customer records, agent records, applications, or storage objects.
 
 alter table public.exchange_rates force row level security;

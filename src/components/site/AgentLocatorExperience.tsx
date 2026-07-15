@@ -154,7 +154,7 @@ export function AgentLocatorExperience({ agents, directoryAgents = [], title, bo
     sortedAgents[0] ??
     null;
   const selectedAddress = selectedAgent?.address ?? "Address pending confirmation";
-  const mapTitle = selectedAgent ? `${selectedAgent.name} on Google Maps` : "Xogmall location on Google Maps";
+  const mapTitle = selectedAgent ? `${selectedAgent.name} on Google Maps` : "Hogmall location on Google Maps";
 
   async function handleNearestSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -248,7 +248,7 @@ export function AgentLocatorExperience({ agents, directoryAgents = [], title, bo
     setTextFilter(agent.name);
     setOrigin(null);
     setOriginLabel("");
-    setStatusMessage(`${agent.name} is directory. Please confirm the current address with Xogmall before visiting.`);
+    setStatusMessage(`${agent.name} is directory. Please confirm the current address with Hogmall before visiting.`);
   }
 
   function selectMappedAgent(agentId: string) {
@@ -260,7 +260,7 @@ export function AgentLocatorExperience({ agents, directoryAgents = [], title, bo
     <div className={isFullPage ? "bg-sky-soft py-10 sm:py-14" : "bg-sky-soft py-14 sm:py-16"}>
       <div className="container-shell">
         <div className={isFullPage ? "grid gap-8 xl:grid-cols-[0.85fr_1.15fr]" : "grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch"}>
-          <div className="rounded-3xl bg-white p-6 shadow-[0_18px_55px_rgba(7,28,62,0.08)] sm:p-8">
+          <div className="rounded-3xl bg-white p-6 shadow-[0_18px_55px_rgba(76,5,8,0.08)] sm:p-8">
             <p className="eyebrow">Agent locator</p>
             <h2 className={isFullPage ? "mt-3 text-4xl font-bold tracking-tight text-ink sm:text-5xl" : "mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl"}>
               {title}
@@ -282,7 +282,7 @@ export function AgentLocatorExperience({ agents, directoryAgents = [], title, bo
                         setSelectedDirectoryId("");
                       }}
                       placeholder="Enter postcode, town, or agent name"
-                      className="h-12 w-full rounded-xl border border-line bg-white pl-11 pr-4 text-sm text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+                      className="h-12 w-full rounded-xl border border-line bg-white pl-11 pr-4 text-sm text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
                     />
                   </div>
                   <button
@@ -298,7 +298,7 @@ export function AgentLocatorExperience({ agents, directoryAgents = [], title, bo
                     type="button"
                     onClick={handleUseLocation}
                     disabled={loadingLocation}
-                    className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-brand/20 bg-white px-4 text-xs font-bold text-brand hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-brand/20 bg-white px-4 text-xs font-bold text-brand hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     <Crosshair aria-hidden="true" size={16} weight="bold" />
                     Use my location
@@ -362,15 +362,15 @@ export function AgentLocatorExperience({ agents, directoryAgents = [], title, bo
             )}
           </div>
 
-          <div className="overflow-hidden rounded-3xl bg-navy text-white shadow-[0_24px_70px_rgba(7,28,62,0.22)]">
+          <div className="overflow-hidden rounded-3xl bg-navy text-white shadow-[0_24px_70px_rgba(76,5,8,0.22)]">
             <div className="grid min-h-full grid-rows-[auto_1fr]">
               <div className="p-6 sm:p-8">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-200">Google map</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-200">Google map</p>
                 <h3 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
-                  {selectedAgent ? selectedAgent.name : "Xogmall agent locations"}
+                  {selectedAgent ? selectedAgent.name : "Hogmall agent locations"}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-blue-100">
-                  {selectedAgent ? selectedAddress : "Published Xogmall agent locations will appear here."}
+                <p className="mt-3 text-sm leading-6 text-red-100">
+                  {selectedAgent ? selectedAddress : "Published Hogmall agent locations will appear here."}
                 </p>
               </div>
 
@@ -420,13 +420,13 @@ function AgentSelectionPanel({
   const agentCountLabel = agents.length === 1 ? "1 mapped agent" : `${agents.length} mapped agents`;
 
   return (
-    <div className="mt-6 rounded-2xl border border-line bg-white p-4 shadow-[0_10px_28px_rgba(7,28,62,0.05)]">
+    <div className="mt-6 rounded-2xl border border-line bg-white p-4 shadow-[0_10px_28px_rgba(76,5,8,0.05)]">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand">Mapped agents</p>
           <h3 className="mt-1 text-lg font-bold tracking-tight text-ink">Choose which agent appears on the map</h3>
         </div>
-        <span className="inline-flex w-fit rounded-full bg-blue-50 px-3 py-1.5 text-xs font-bold text-brand">
+        <span className="inline-flex w-fit rounded-full bg-red-50 px-3 py-1.5 text-xs font-bold text-brand">
           {agentCountLabel}
         </span>
       </div>
@@ -436,7 +436,7 @@ function AgentSelectionPanel({
         <select
           value={selectedId}
           onChange={(event) => onSelect(event.target.value)}
-          className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-sm font-semibold text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+          className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-sm font-semibold text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
         >
           {agents.map((agent, index) => (
             <option key={agent.id} value={agent.id}>
@@ -452,7 +452,7 @@ function AgentSelectionPanel({
             type="button"
             onClick={onUseLocation}
             disabled={loadingLocation}
-            className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-brand/20 bg-blue-50 px-4 text-xs font-bold text-brand hover:bg-blue-100 disabled:cursor-not-allowed disabled:opacity-60"
+            className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-brand/20 bg-red-50 px-4 text-xs font-bold text-brand hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <Crosshair aria-hidden="true" size={16} weight="bold" />
             {loadingLocation ? "Checking..." : "Use my location"}
@@ -486,11 +486,11 @@ function AgentDirectoryPanel({
   const optionAgents = agents.length > 0 ? agents : allAgents;
 
   return (
-    <div className="mt-6 rounded-2xl border border-blue-100 bg-blue-50/70 p-4">
+    <div className="mt-6 rounded-2xl border border-red-100 bg-red-50/70 p-4">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand">Wider agent network</p>
-          <h3 className="mt-2 text-lg font-bold tracking-tight text-ink">Search all directory Xogmall agents</h3>
+          <h3 className="mt-2 text-lg font-bold tracking-tight text-ink">Search all directory Hogmall agents</h3>
           <p className="mt-2 text-xs leading-5 text-muted">
             Mapped agents have confirmed public addresses and directions. directory agents below are discoverable by name or register reference while their public address is being confirmed.
           </p>
@@ -505,7 +505,7 @@ function AgentDirectoryPanel({
         <select
           value={selectedId}
           onChange={(event) => onSelect(event.target.value)}
-          className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-sm font-semibold text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+          className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-sm font-semibold text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
         >
           <option value="">Select another directory agent</option>
           {optionAgents.map((agent) => (
@@ -520,13 +520,13 @@ function AgentDirectoryPanel({
         {selectedAgent ? (
           <AgentDirectoryCard agent={selectedAgent} isSelected />
         ) : agents.length > 0 ? (
-          <p className="rounded-xl border border-blue-100 bg-white p-4 text-sm leading-6 text-muted">
+          <p className="rounded-xl border border-red-100 bg-white p-4 text-sm leading-6 text-muted">
             {normalizedSearch
               ? `${agents.length} address-pending directory ${agents.length === 1 ? "agent matches" : "agents match"} "${normalizedSearch}". Choose one from the dropdown above to view its details.`
               : "Choose an address-pending directory agent from the dropdown above to view its details."}
           </p>
         ) : (
-          <p className="rounded-xl border border-dashed border-blue-200 bg-white p-4 text-sm leading-6 text-muted">
+          <p className="rounded-xl border border-dashed border-red-200 bg-white p-4 text-sm leading-6 text-muted">
             No published agent directory agents match {normalizedSearch ? `"${normalizedSearch}"` : "that search"}. Try a different agent name or register reference.
           </p>
         )}
@@ -537,9 +537,9 @@ function AgentDirectoryPanel({
 
 function AgentDirectoryCard({ agent, isSelected }: { agent: AgentDirectoryEntry; isSelected: boolean }) {
   return (
-    <article className={`rounded-xl border bg-white p-4 ${isSelected ? "border-brand shadow-[0_12px_24px_rgba(17,73,216,0.12)]" : "border-line"}`}>
+    <article className={`rounded-xl border bg-white p-4 ${isSelected ? "border-brand shadow-[0_12px_24px_rgba(220,20,30,0.12)]" : "border-line"}`}>
       <div className="flex items-start gap-3">
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-brand">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-brand">
           <Storefront aria-hidden="true" size={20} weight="duotone" />
         </span>
         <div className="min-w-0">
@@ -556,7 +556,7 @@ function AgentDirectoryCard({ agent, isSelected }: { agent: AgentDirectoryEntry;
           </p>
           {agent.source_note && <p className="mt-2 text-xs leading-5 text-muted">{agent.source_note}</p>}
           <Link href="/contact" className="focus-ring mt-3 inline-flex rounded-lg text-sm font-bold text-brand hover:text-brand-dark">
-            Confirm address with Xogmall
+            Confirm address with Hogmall
           </Link>
         </div>
       </div>
@@ -580,16 +580,16 @@ function AgentCard({
   const directionsUrl = mapsDirectionsUrl(agent.address, origin);
 
   return (
-    <article className={`rounded-2xl border bg-white p-4 transition ${isSelected ? "border-brand shadow-[0_14px_30px_rgba(17,73,216,0.12)]" : "border-line hover:border-blue-200"}`}>
+    <article className={`rounded-2xl border bg-white p-4 transition ${isSelected ? "border-brand shadow-[0_14px_30px_rgba(220,20,30,0.12)]" : "border-line hover:border-red-200"}`}>
       <div className="flex items-start gap-3">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-blue-50 text-brand">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-red-50 text-brand">
           <Storefront aria-hidden="true" size={22} weight="duotone" />
         </span>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-start justify-between gap-2">
             <h3 className="font-semibold text-ink">{agent.name}</h3>
             {agent.distanceMiles !== null && (
-              <span className="rounded-full bg-blue-50 px-2.5 py-1 text-xs font-bold text-brand">
+              <span className="rounded-full bg-red-50 px-2.5 py-1 text-xs font-bold text-brand">
                 {formatDistance(agent.distanceMiles)}
               </span>
             )}
@@ -627,12 +627,12 @@ function AgentCard({
 
 function EmptyLocatorState({ hasDirectoryMatches = false }: { hasDirectoryMatches?: boolean }) {
   return (
-    <div className="rounded-2xl border border-dashed border-blue-200 bg-blue-50 p-5">
+    <div className="rounded-2xl border border-dashed border-red-200 bg-red-50 p-5">
       <h3 className="font-semibold text-ink">No matching agents found.</h3>
       <p className="mt-2 text-sm leading-6 text-muted">
         {hasDirectoryMatches
           ? "No confirmed map locations match this search yet. Check the wider published agent directory above, or try a different postcode, town, agent name, or register reference."
-          : "Try a different postcode, town, or agent name. Published Xogmall agents can also be confirmed by contacting support."}
+          : "Try a different postcode, town, or agent name. Published Hogmall agents can also be confirmed by contacting support."}
       </p>
     </div>
   );

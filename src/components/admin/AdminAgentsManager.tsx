@@ -342,7 +342,7 @@ export function AdminAgentsManager({
 
     const supabase = createClient();
     const { error: insertError } = await supabase.from("agents").insert({
-      name: application.business_name || application.full_name || "New Xogmall agent",
+      name: application.business_name || application.full_name || "New Hogmall agent",
       address_line_1: addressLine1,
       address_line_2: emptyToNull(application.business_address_line_2 ?? ""),
       city,
@@ -446,18 +446,18 @@ export function AdminAgentsManager({
 
             {view === "locator" ? (
               <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto]">
-                <select value={agentStatusFilter} onChange={(event) => setAgentStatusFilter(event.target.value as StatusFilter)} className="h-11 rounded-xl border border-line bg-white px-3 text-sm text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+                <select value={agentStatusFilter} onChange={(event) => setAgentStatusFilter(event.target.value as StatusFilter)} className="h-11 rounded-xl border border-line bg-white px-3 text-sm text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
                   <option value="all">All locator agents</option>
                   <option value="published">Published only</option>
                   <option value="draft">Draft only</option>
                 </select>
-                <a href="/api/admin/agents/export" className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-line bg-white px-4 text-sm font-semibold text-brand hover:bg-blue-50">
+                <a href="/api/admin/agents/export" className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-line bg-white px-4 text-sm font-semibold text-brand hover:bg-red-50">
                   <FilePdf size={17} weight="bold" />
                   Export register
                 </a>
               </div>
             ) : (
-              <select value={applicationStatusFilter} onChange={(event) => setApplicationStatusFilter(event.target.value as ApplicationFilter)} className="mt-3 h-11 w-full rounded-xl border border-line bg-white px-3 text-sm text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+              <select value={applicationStatusFilter} onChange={(event) => setApplicationStatusFilter(event.target.value as ApplicationFilter)} className="mt-3 h-11 w-full rounded-xl border border-line bg-white px-3 text-sm text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
                 <option value="all">All applications</option>
                 {Object.entries(applicationStatusLabels).map(([status, label]) => (
                   <option key={status} value={status}>{label}</option>
@@ -538,7 +538,7 @@ function AgentList({
         const selected = agent.id === selectedId;
         const address = formatAgentAddress(agent);
         return (
-          <article key={agent.id} className={`rounded-2xl border bg-white p-4 transition ${selected ? "border-brand shadow-sm" : "border-line hover:border-blue-200"}`}>
+          <article key={agent.id} className={`rounded-2xl border bg-white p-4 transition ${selected ? "border-brand shadow-sm" : "border-line hover:border-red-200"}`}>
             <button type="button" onClick={() => onSelect(agent)} className="block w-full text-left">
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
@@ -558,7 +558,7 @@ function AgentList({
                 {agent.status === "published" ? <EyeSlash size={15} weight="bold" /> : <Eye size={15} weight="bold" />}
                 {agent.status === "published" ? "Unpublish" : "Publish"}
               </button>
-              <a href={`/api/admin/agents/${agent.id}/pdf`} className="focus-ring inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-line px-3 text-xs font-bold text-brand hover:bg-blue-50">
+              <a href={`/api/admin/agents/${agent.id}/pdf`} className="focus-ring inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-line px-3 text-xs font-bold text-brand hover:bg-red-50">
                 <FilePdf size={15} weight="bold" />
                 PDF
               </a>
@@ -593,7 +593,7 @@ function ApplicationList({
             key={application.id}
             type="button"
             onClick={() => onSelect(application)}
-            className={`focus-ring rounded-2xl border bg-white p-4 text-left transition ${selected ? "border-brand shadow-sm" : "border-line hover:border-blue-200"}`}
+            className={`focus-ring rounded-2xl border bg-white p-4 text-left transition ${selected ? "border-brand shadow-sm" : "border-line hover:border-red-200"}`}
           >
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
@@ -651,7 +651,7 @@ function LocatorAgentDetail({
         <div className="flex flex-wrap gap-2">
           {selectedAgent && (
             <>
-              <a href={`/api/admin/agents/${selectedAgent.id}/pdf`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-blue-50">
+              <a href={`/api/admin/agents/${selectedAgent.id}/pdf`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-red-50">
                 <FilePdf size={17} weight="bold" />
                 Download PDF
               </a>
@@ -677,7 +677,7 @@ function LocatorAgentDetail({
         <TextField label="Agent name" value={form.name} onChange={(value) => onFieldChange("name", value)} required />
         <label>
           <span className="text-sm font-semibold text-ink">Public status</span>
-          <select value={form.status} onChange={(event) => onFieldChange("status", event.target.value as AgentFormState["status"])} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+          <select value={form.status} onChange={(event) => onFieldChange("status", event.target.value as AgentFormState["status"])} className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
             <option value="published">Published</option>
             <option value="draft">Draft / hidden</option>
           </select>
@@ -696,21 +696,21 @@ function LocatorAgentDetail({
 
       <label className="mt-5 block">
         <span className="text-sm font-semibold text-ink">Opening hours</span>
-        <textarea value={form.opening_hours} onChange={(event) => onFieldChange("opening_hours", event.target.value)} rows={3} className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" placeholder="Mon-Fri 09:00-18:00, Sat 10:00-15:00" />
+        <textarea value={form.opening_hours} onChange={(event) => onFieldChange("opening_hours", event.target.value)} rows={3} className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" placeholder="Mon-Fri 09:00-18:00, Sat 10:00-15:00" />
       </label>
 
       <label className="mt-5 block">
         <span className="text-sm font-semibold text-ink">Services</span>
-        <textarea value={form.services} onChange={(event) => onFieldChange("services", event.target.value)} rows={3} className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" placeholder="Customer support, transfer guidance, onboarding" />
+        <textarea value={form.services} onChange={(event) => onFieldChange("services", event.target.value)} rows={3} className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" placeholder="Customer support, transfer guidance, onboarding" />
       </label>
 
       {selectedAgent && (
         <div className="mt-5 flex flex-wrap gap-3 rounded-2xl bg-sky-soft p-4">
-          <a href={mapsSearchUrl(address)} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-blue-50">
+          <a href={mapsSearchUrl(address)} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-red-50">
             <MapPin size={17} weight="bold" />
             Open map
           </a>
-          <a href={`/agents`} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-blue-50">
+          <a href={`/agents`} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-red-50">
             <ArrowSquareOut size={17} weight="bold" />
             View public locator
           </a>
@@ -762,7 +762,7 @@ function ApplicationDetail({
 
   const missingItems = getApplicationMissingItems(application);
   const missingBody = missingItems.length > 0
-    ? `Hi ${application.full_name || "there"},\n\nThank you for starting your Xogmall agent registration. Please complete or upload the following so we can continue reviewing your application:\n\n- ${missingItems.join("\n- ")}\n\nYou can return to your private onboarding link to update the application.\n\nKind regards,\nXogmall`
+    ? `Hi ${application.full_name || "there"},\n\nThank you for starting your Hogmall agent registration. Please complete or upload the following so we can continue reviewing your application:\n\n- ${missingItems.join("\n- ")}\n\nYou can return to your private onboarding link to update the application.\n\nKind regards,\nHogmall`
     : "";
 
   return (
@@ -783,7 +783,7 @@ function ApplicationDetail({
             <FilePdf size={17} weight="bold" />
             Download pack PDF
           </a>
-          <a href={`/api/admin/agent-applications/${application.id}/forms`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-blue-50">
+          <a href={`/api/admin/agent-applications/${application.id}/forms`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-red-50">
             <DownloadSimple size={17} weight="bold" />
             Forms ZIP
           </a>
@@ -791,7 +791,7 @@ function ApplicationDetail({
             type="button"
             onClick={() => onCreateLocatorDraft(application)}
             disabled={loadingAction === `application-promote-${application.id}`}
-            className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-blue-50 disabled:cursor-wait disabled:opacity-60"
+            className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl border border-line px-4 text-sm font-semibold text-brand hover:bg-red-50 disabled:cursor-wait disabled:opacity-60"
           >
             <Storefront size={17} weight="bold" />
             Create locator draft
@@ -812,7 +812,7 @@ function ApplicationDetail({
               <p className="mt-1 text-sm leading-6 text-amber-900/80">Use this checklist to follow up with the applicant.</p>
             </div>
             {application.email && (
-              <a href={`mailto:${application.email}?subject=${encodeURIComponent("Xogmall agent registration - missing information")}&body=${encodeURIComponent(missingBody)}`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-amber-900 hover:bg-amber-100">
+              <a href={`mailto:${application.email}?subject=${encodeURIComponent("Hogmall agent registration - missing information")}&body=${encodeURIComponent(missingBody)}`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-amber-900 hover:bg-amber-100">
                 <EnvelopeSimple size={17} weight="bold" />
                 Email follow-up
               </a>
@@ -851,7 +851,7 @@ function ApplicationDetail({
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {preparedAgentForms.map((form) => (
-            <a key={form.id} href={`/api/admin/agent-applications/${application.id}/forms/${form.id}`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-blue-50">
+            <a key={form.id} href={`/api/admin/agent-applications/${application.id}/forms/${form.id}`} className="focus-ring inline-flex min-h-10 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-brand hover:bg-red-50">
               <DownloadSimple size={16} weight="bold" />
               {form.label}
             </a>
@@ -886,7 +886,7 @@ function ApplicationDetail({
             <div className="grid gap-4 lg:grid-cols-[0.65fr_1fr_auto] lg:items-end">
               <label>
                 <span className="text-sm font-semibold text-ink">Review status</span>
-                <select value={status} onChange={(event) => onStatusChange(application, event.target.value as AgentApplicationStatus)} className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+                <select value={status} onChange={(event) => onStatusChange(application, event.target.value as AgentApplicationStatus)} className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
                   {Object.entries(applicationStatusLabels).map(([value, label]) => (
                     <option key={value} value={value}>{label}</option>
                   ))}
@@ -894,7 +894,7 @@ function ApplicationDetail({
               </label>
               <label>
                 <span className="text-sm font-semibold text-ink">Admin notes</span>
-                <input value={notes} onChange={(event) => onNotesChange(application, event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100" placeholder="Internal review note" />
+                <input value={notes} onChange={(event) => onNotesChange(application, event.target.value)} className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100" placeholder="Internal review note" />
               </label>
               <button type="button" onClick={() => onSaveReview(application)} disabled={loadingAction === `application-save-${application.id}`} className="focus-ring inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-navy px-5 text-sm font-semibold text-white hover:bg-[#061b3b] disabled:cursor-wait disabled:opacity-60">
                 <FloppyDisk size={18} weight="bold" />
@@ -946,7 +946,7 @@ function AdminApplicationNextStep({
     ? "border-amber-200 bg-amber-50 text-amber-900"
     : submitted
       ? "border-emerald-200 bg-emerald-50 text-emerald-900"
-      : "border-blue-200 bg-blue-50 text-blue-900";
+      : "border-red-200 bg-red-50 text-red-900";
   const title = hasMissingItems
     ? "Staff next step: request missing information"
     : submitted
@@ -978,7 +978,7 @@ function MetricCard({ label, value, tone }: { label: string; value: string; tone
   const toneClass = {
     live: "bg-emerald-50 text-emerald-800",
     draft: "bg-slate-100 text-slate-700",
-    review: "bg-blue-50 text-brand",
+    review: "bg-red-50 text-brand",
     attention: "bg-amber-50 text-amber-800",
   }[tone];
 
@@ -1058,7 +1058,7 @@ function TextField({
         step={step}
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+        className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
       />
     </label>
   );
@@ -1175,7 +1175,7 @@ function applicationStatusClass(status: AgentApplicationStatus) {
       return "bg-red-100 text-red-800";
     case "submitted":
     case "under_review":
-      return "bg-blue-100 text-blue-800";
+      return "bg-red-100 text-red-800";
     case "more_info_required":
       return "bg-amber-100 text-amber-800";
     default:

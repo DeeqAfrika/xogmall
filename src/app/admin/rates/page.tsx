@@ -49,9 +49,9 @@ export default async function AdminRatesPage() {
         <div>
           <p className="eyebrow">Rate management</p>
           <h1 className="mt-3 text-4xl font-semibold tracking-[-0.045em] text-ink sm:text-5xl">Daily exchange rate</h1>
-          <p className="mt-4 max-w-xl text-sm leading-6 text-muted">Publish the GBP to USD rate shown across the public Xogmall website.</p>
+          <p className="mt-4 max-w-xl text-sm leading-6 text-muted">Publish the GBP to USD rate shown across the public Hogmall website.</p>
         </div>
-        <div className="rounded-xl border border-blue-100 bg-white px-5 py-4 shadow-sm">
+        <div className="rounded-xl border border-red-100 bg-white px-5 py-4 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wider text-muted">Current active rate</p>
           <p className="mt-1 font-mono text-2xl font-semibold text-brand">{activeRate ? `£1 = $${Number(activeRate.rate).toFixed(6)}` : "Not published"}</p>
         </div>
@@ -60,9 +60,9 @@ export default async function AdminRatesPage() {
       <div className="mt-10 grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
         <AdminRateForm defaultDate={getLondonDate()} />
         <div className="rounded-2xl bg-navy p-7 text-white sm:p-8">
-          <p className="eyebrow !text-blue-300">Publishing checklist</p>
+          <p className="eyebrow !text-red-300">Publishing checklist</p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight">Confirm before publishing</h2>
-          <ol className="mt-7 space-y-5 text-sm leading-6 text-blue-100">
+          <ol className="mt-7 space-y-5 text-sm leading-6 text-red-100">
             <li><span className="mr-3 font-mono text-coral">01</span>Check the rate is the approved GBP to USD daily rate.</li>
             <li><span className="mr-3 font-mono text-coral">02</span>Confirm the effective date in UK time.</li>
             <li><span className="mr-3 font-mono text-coral">03</span>Add a short internal note when useful.</li>

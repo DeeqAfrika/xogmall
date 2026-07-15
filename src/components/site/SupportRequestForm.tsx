@@ -47,7 +47,7 @@ export function SupportRequestForm() {
         <TextField label="Phone number" name="phone" type="tel" autoComplete="tel" />
         <label>
           <span className="text-sm font-semibold text-ink">Support topic</span>
-          <select name="topic" className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100">
+          <select name="topic" className="mt-2 h-12 w-full rounded-xl border border-line bg-white px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100">
             <option>Transfer support</option>
             <option>Payout availability</option>
             <option>Agent support</option>
@@ -67,7 +67,7 @@ export function SupportRequestForm() {
           name="message"
           required
           rows={6}
-          className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+          className="mt-2 w-full resize-y rounded-xl border border-line px-4 py-3 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
         />
       </label>
 
@@ -100,7 +100,7 @@ function TextField({
         type={type}
         required={required}
         autoComplete={autoComplete}
-        className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-blue-100"
+        className="mt-2 h-12 w-full rounded-xl border border-line px-4 text-ink outline-none focus:border-brand focus:ring-3 focus:ring-red-100"
       />
     </label>
   );

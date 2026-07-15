@@ -1,6 +1,6 @@
-# Xogmall
+# Hogmall
 
-Independent Xogmall-branded Next.js application with a public GBP/USD calculator, rate publishing, agent locator and management, agent onboarding with private document uploads, admin review, content management, and PDF/DOCX exports.
+Independent Hogmall-branded Next.js application with a public GBP/USD calculator, rate publishing, agent locator and management, agent onboarding with private document uploads, admin review, content management, and PDF/DOCX exports.
 
 This repository must remain isolated from every other brand's database, authentication users, storage, Vercel project, environment variables, domains, and customer data.
 
@@ -20,13 +20,13 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Add only Xogmall development credentials to `.env.local`. Never use credentials from another project. When public Supabase configuration is missing, the website still renders and the public rate shows a safe temporary-unavailable state.
+Add only Hogmall development credentials to `.env.local`. Never use credentials from another project. When public Supabase configuration is missing, the website still renders and the public rate shows a safe temporary-unavailable state.
 
 ## Environment variables
 
 | Variable | Scope | Purpose |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SUPABASE_URL` | Public | Xogmall Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_URL` | Public | Hogmall Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Public | Preferred browser-safe Supabase key |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Public, legacy | Fallback browser-safe anon key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Server only | Admin bootstrap and server-side private downloads |
@@ -44,7 +44,7 @@ Never prefix a service-role key, password, or other secret with `NEXT_PUBLIC_`.
 The intended project reference is `tucdbycpgfvcceauttyb`. The URL is configured only through `NEXT_PUBLIC_SUPABASE_URL`; it is not hardcoded into application modules.
 
 1. Install/login to the Supabase CLI.
-2. Link this checkout to the Xogmall project only:
+2. Link this checkout to the Hogmall project only:
 
    ```bash
    npx supabase login
@@ -114,7 +114,7 @@ Manually verify the homepage, two-way calculator, mobile navigation, agent direc
 
 ## Remaining launch requirements
 
-The current logos are clearly temporary generated placeholders. Before launch, Xogmall must provide and approve:
+The current logos are clearly temporary generated placeholders. Before launch, Hogmall must provide and approve:
 
 - official logo and brand colours
 - legal company name, company number, and registered address
