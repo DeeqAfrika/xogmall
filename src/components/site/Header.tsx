@@ -2,36 +2,32 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { List, Storefront, X } from "@phosphor-icons/react";
+import { ArrowRight, List, X } from "@phosphor-icons/react";
 import { useState } from "react";
 import { brand } from "@/config/brand";
 
 const links = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Agents", href: "/agents" },
-  { label: "Contact", href: "/contact" },
+  { label: "Today’s rate", href: "/#rate-calculator" },
+  { label: "Find an agent", href: "/agents#locator" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Help", href: "/contact" },
 ];
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative z-40 border-b border-line bg-white">
-      <div className="container-shell flex min-h-16 items-center justify-between gap-4 lg:min-h-[4.5rem]">
+    <header className="relative z-40 bg-[#fffaf6]">
+      <div className="container-shell flex min-h-[4.75rem] items-center justify-between gap-4 lg:min-h-[5.5rem]">
         <Link
           href="/"
           aria-label={`${brand.name} home`}
           className="focus-ring shrink-0 rounded-lg"
         >
-          <Image
-            src={brand.logo.icon}
-            alt={brand.name}
-            width={267}
-            height={255}
-            priority
-            className="h-11 w-auto object-contain sm:h-12"
-          />
+          <span className="flex items-center gap-3">
+            <Image src={brand.logo.icon} alt="" width={267} height={255} priority className="h-11 w-auto object-contain sm:h-12" />
+            <span className="text-lg font-extrabold tracking-[-0.03em] text-ink">{brand.name}</span>
+          </span>
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-5 lg:flex">
@@ -46,16 +42,9 @@ export function Header() {
           ))}
         </nav>
 
-        {brand.agentPortalUrl && <div className="hidden items-center gap-2 lg:flex">
-          <a
-            href={brand.agentPortalUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="focus-ring inline-flex h-10 items-center justify-center gap-2 rounded-md border border-brand px-3 text-xs font-semibold text-brand transition-colors hover:bg-red-50"
-          >
-            <Storefront aria-hidden="true" size={15} weight="bold" /> Open Agent Portal
-          </a>
-        </div>}
+        <Link href="/agents#become-agent" className="focus-ring hidden min-h-11 items-center gap-2 rounded-full bg-brand px-5 text-sm font-bold text-white hover:bg-brand-dark lg:inline-flex">
+          Join the network <ArrowRight aria-hidden="true" size={16} weight="bold" />
+        </Link>
 
         <button
           type="button"
@@ -84,16 +73,9 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            {brand.agentPortalUrl && <div className="mt-3 border-t border-line pt-4">
-              <a
-                href={brand.agentPortalUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="focus-ring inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-brand px-3 text-center text-sm font-semibold text-brand"
-              >
-                Open Agent Portal
-              </a>
-            </div>}
+            <div className="mt-3 border-t border-line pt-4">
+              <Link href="/agents#become-agent" onClick={() => setOpen(false)} className="focus-ring inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand px-4 text-center text-sm font-bold text-white">Join the network</Link>
+            </div>
           </div>
         </nav>
       )}

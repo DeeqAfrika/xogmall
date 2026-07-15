@@ -37,6 +37,7 @@ yarn-error.log*
 # local visual QA captures
 .qa/
 .playwright-cli/
+output/playwright/
 
 # local scrape/cache outputs
 .firecrawl/

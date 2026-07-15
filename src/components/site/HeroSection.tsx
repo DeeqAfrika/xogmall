@@ -1,49 +1,35 @@
 import Image from "next/image";
-import Link from "next/link";
 import { RateCalculator } from "./RateCalculator";
 import type { ExchangeRate } from "@/lib/types";
 
 export function HeroSection({ rate }: { rate: ExchangeRate | null }) {
   return (
-    <section className="relative bg-white pb-8">
-      <div className="grid lg:min-h-[520px] lg:grid-cols-[0.43fr_0.57fr]">
-        <div className="flex items-center bg-brand-dark px-5 py-14 text-white sm:px-10 lg:px-[max(3rem,calc((100vw-74rem)/2))] lg:pr-12">
-          <div className="max-w-lg">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-red-200">
-              Hogmall platform preview
-            </p>
-            <h1 className="mt-5 text-[clamp(2.55rem,3.7vw,3.75rem)] font-bold leading-[1.02] tracking-[-0.055em] text-white">
-              Check the latest published GBP to USD rate.
-            </h1>
-            <p className="mt-6 max-w-md text-base leading-7 text-red-100 sm:text-lg">
-              Use the two-way calculator, find published agent locations, or start an agent application. Service and destination information is awaiting approval.
-            </p>
-            <div className="mt-6 h-1 w-12 rounded-full bg-white/80" />
-            <div className="mt-8 flex flex-wrap gap-3 lg:hidden">
-              <Link href="#rate-calculator" className="focus-ring rounded-md bg-white px-5 py-3 text-sm font-semibold text-brand-dark">
-                Check your transfer
-              </Link>
-              <Link href="/contact#support" className="focus-ring rounded-md border border-white/40 px-5 py-3 text-sm font-semibold text-white">
-                Talk to support
-              </Link>
-            </div>
+    <section className="overflow-hidden bg-[#fffaf6] pb-12 lg:pb-20">
+      <div className="container-shell grid items-stretch gap-6 lg:grid-cols-[0.78fr_1.15fr_0.72fr] lg:gap-0">
+        <div className="flex flex-col justify-center py-12 lg:pr-10">
+          <p className="eyebrow">Neighbourhood exchange</p>
+          <h1 className="mt-5 [font-family:Georgia,'Times_New_Roman',serif] text-[clamp(3rem,5vw,5.25rem)] font-normal leading-[0.94] tracking-[-0.055em] text-ink">
+            Real people.<br />Real rates.<br /><span className="text-brand">Right around the corner.</span>
+          </h1>
+          <p className="mt-7 max-w-md text-base leading-7 text-muted">Check the published rate, calculate an estimate, and find local support through Hogmall’s agent network.</p>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
+            <a href="#rate-calculator" className="focus-ring rounded-full bg-brand px-6 py-3 text-white hover:bg-brand-dark">See today&apos;s rate</a>
+            <a href="/agents#locator" className="focus-ring rounded-full border border-ink/25 px-6 py-3 text-ink hover:border-brand hover:text-brand">Find a local agent</a>
           </div>
         </div>
-
-        <div className="relative min-h-[360px] lg:min-h-[520px]">
+        <div className="relative min-h-[430px] overflow-hidden rounded-[2rem] lg:min-h-[680px] lg:rounded-none">
           <Image
             src="/images/hogmall-transfer-family.png"
-            alt="A man and an older couple using their phones"
+            alt="A man checking his phone and family members receiving an update"
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 57vw"
-            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 46vw"
+            className="object-cover object-left"
           />
         </div>
-      </div>
-
-      <div className="container-shell relative z-10 -mt-3 pb-2 lg:-mt-24">
-        <RateCalculator rate={rate ? Number(rate.rate) : null} />
+        <div className="relative z-10 flex items-center lg:-ml-6">
+          <RateCalculator rate={rate ? Number(rate.rate) : null} />
+        </div>
       </div>
     </section>
   );
