@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, GlobeHemisphereEast, Handshake, ShieldCheck, UsersThree } from "@phosphor-icons/react/dist/ssr";
 import { PublicPageShell } from "@/components/site/PublicPageShell";
-import { COMPANY_ADDRESS } from "@/lib/constants";
+import { brand } from "@/config/brand";
 import { getSiteContentValues } from "@/lib/site-content";
 
 export const metadata: Metadata = {
@@ -41,9 +41,11 @@ export default async function AboutPage() {
             <section className="rounded-2xl border border-line bg-sky-soft p-6 sm:p-8">
               <h2 className="text-2xl font-semibold tracking-tight text-ink">Company details</h2>
               <dl className="mt-6 grid gap-4 text-sm leading-6">
-                <Detail label="Registered company" value={COMPANY_ADDRESS.name} />
-                <Detail label="Company number" value="To be confirmed before launch" />
-                <Detail label="Registered address" value={`${COMPANY_ADDRESS.line1}, ${COMPANY_ADDRESS.city}, ${COMPANY_ADDRESS.country}, ${COMPANY_ADDRESS.postcode}`} />
+                <Detail label="Registered company" value={brand.legalName} />
+                <Detail label="Company number" value={brand.companyNumber} href={brand.companiesHouseUrl} />
+                <Detail label="Registered address" value={brand.registeredAddress} />
+                <Detail label="Telephone" value={brand.telephone} href={`tel:${brand.telephone.replace(/\s/g, "")}`} />
+                <Detail label="Email" value={brand.contactEmail} href={`mailto:${brand.contactEmail}`} />
               </dl>
             </section>
 
@@ -62,6 +64,19 @@ export default async function AboutPage() {
               </ul>
             </section>
           </div>
+
+          <section className="mt-8 rounded-2xl border border-amber-300 bg-amber-50 p-6 sm:p-8">
+            <p className="eyebrow text-amber-800">Regulatory information</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-ink">Registered as a Small Payment Institution</h2>
+            <dl className="mt-6 grid gap-4 text-sm leading-6 sm:grid-cols-3">
+              <Detail label="FCA firm reference number" value={brand.fcaReferenceNumber} href={brand.fcaRegisterUrl} />
+              <Detail label="Register type" value={brand.regulatoryType} />
+              <Detail label="Status since" value={brand.paymentServicesStatusSince} />
+            </dl>
+            <p className="mt-6 text-sm font-semibold leading-6 text-amber-950">Important: some activities may not be protected. Money held with a Small Payment Institution is not protected by the Financial Services Compensation Scheme (FSCS).</p>
+            <p className="mt-3 text-sm leading-6 text-amber-950">Check the Financial Services Register for Hogmall Ltd’s current status, permissions, restrictions and contact details. Whether the Financial Ombudsman Service can consider a complaint depends on the circumstances and activity.</p>
+            <Link href="/regulatory-information" className="focus-ring mt-5 inline-flex text-sm font-bold text-brand underline underline-offset-4 hover:text-brand-dark">Read the full regulatory information</Link>
+          </section>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {supportAreas.map(({ icon: Icon, title, text }) => (
@@ -90,11 +105,11 @@ export default async function AboutPage() {
   );
 }
 
-function Detail({ label, value }: { label: string; value: string }) {
+function Detail({ label, value, href }: { label: string; value: string; href?: string }) {
   return (
     <div>
       <dt className="text-xs font-bold uppercase tracking-[0.12em] text-muted">{label}</dt>
-      <dd className="mt-1 text-ink">{value}</dd>
+      <dd className="mt-1 text-ink">{href ? <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="font-semibold underline underline-offset-4 hover:text-brand">{value}</a> : value}</dd>
     </div>
   );
 }
